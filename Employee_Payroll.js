@@ -18,6 +18,9 @@ if (empCheck == IS_ABSENT) {
     const PART_TIME_HOURS = 4;
     const FULL_TIME_HOURS = 8;
     const WAGE_PER_HOUR = 20;
+
+// UC6 daily wage using array
+    const empDailyWageArray;
 // UC3 write function for daily working hours
 
     function getWorkingHours(empCheck) {
@@ -33,7 +36,10 @@ if (empCheck == IS_ABSENT) {
    /**
  * UC4 Calculating wages for a month
  */
-    {
+function calculateDailyWage(empHrs){
+    return empHrs*WAGE_PER_HOUR;
+}
+   {
         let totalEmpHrs = 0;
         let totalWorkingDays = 0;
         /**
@@ -43,9 +49,12 @@ if (empCheck == IS_ABSENT) {
         while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
             totalWorkingDays++;
             let empCheck = Math.floor(Math.random() * 10) % 3;
-            totalEmpHrs += getWorkingHours(empCheck);
+           let empHrs= getWorkingHours(empCheck);
+           totalEmpHrs+=empHrs;
+           empDailyWageArray.push(calculateDailyWage(empHrs))
         }
-        let empWage = totalEmpHrs * WAGE_PER_HOUR;
-        console.log("UC5 -Total Days:" + totalWorkingDays + " Total Hours:" + totalEmpHrs + " Employee Wage:" + empWage);
+        let empWage = calculateDailyWage(totalEmpHrs);
+        console.log("UC6 -Total Days:" + totalWorkingDays + " Total Hours:" + totalEmpHrs + " Employee Wage:" + empWage);
+        console.log(empDailyWageArray);
     }
 }
