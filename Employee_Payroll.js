@@ -20,7 +20,7 @@ if (empCheck == IS_ABSENT) {
     const WAGE_PER_HOUR = 20;
 
 // UC6 daily wage using array
-    const empDailyWageArray;
+    let empDailyWageArray=new Array();
 // UC3 write function for daily working hours
 
     function getWorkingHours(empCheck) {
@@ -58,10 +58,16 @@ function calculateDailyWage(empHrs){
         console.log(empDailyWageArray);
     }
 }
-//UC7 foreach
+//UC7a foreach
 let totalWage=0;
 function sum(dailyWage){
     totalWage+=dailyWage;
 }
 empDailyWageArray.forEach(sum);
 console.log("7 A -totalWage is" +totalWage);
+//UC7a reduce method
+function totalWages(sum, nextValue){
+    return sum+nextValue;
+}
+    let sum1=empDailyWageArray.reduce(totalWage,0);
+    console.log("7 A - totalWage is" +sum1);
