@@ -58,3 +58,10 @@ function calculateDailyWage(empHrs){
         console.log(empDailyWageArray);
     }
 }
+//UC7 foreach
+let totalWage=0;
+function sum(dailyWage){
+    totalWage+=dailyWage;
+}
+empDailyWageArray.forEach(sum);
+console.log("7 A -totalWage is" +totalWage);
