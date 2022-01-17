@@ -33,13 +33,19 @@ if (empCheck == IS_ABSENT) {
    /**
  * UC4 Calculating wages for a month
  */
-{
-    let totalEmpHrs = 0;
-    for (let day = 0; day < NUM_OF_WORKING_DAYS; day++) {
-        let empCheck = Math.floor(Math.random() * 10) % 3;
-        totalEmpHrs += getWorkingHours(empCheck);
+    {
+        let totalEmpHrs = 0;
+        let totalWorkingDays = 0;
+        /**
+        * using while loop
+        * UC5 Calculating wages till total woking hours 160 or max day 20 days
+        */
+        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
+            totalWorkingDays++;
+            let empCheck = Math.floor(Math.random() * 10) % 3;
+            totalEmpHrs += getWorkingHours(empCheck);
+        }
+        let empWage = totalEmpHrs * WAGE_PER_HOUR;
+        console.log("UC5 -Total Days:" + totalWorkingDays + " Total Hours:" + totalEmpHrs + " Employee Wage:" + empWage);
     }
-    let empWage = totalEmpHrs * WAGE_PER_HOUR;
-    console.log("Total Hours:" + totalEmpHrs + " Employee Wage:" + empWage);
-}
 }
