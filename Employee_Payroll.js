@@ -71,3 +71,14 @@ function totalWages(sum, nextValue){
 }
     let sum1=empDailyWageArray.reduce(totalWage,0);
     console.log("7 A - totalWage is" +sum1);
+    // UC7b using array map
+let counter=0;
+function mapDayDailyWage(dailyWage)  {
+    counter++;
+        return counter+"="+dailyWage;
+}  
+let mapDayWithWageArray=empDailyWageArray.map(mapDayWithWageArray);
+console.log("7B "+mapDayWithWageArray);
+
+
+
