@@ -88,3 +88,8 @@ console.log("7C" +fullDayWageArr);
 
 let fullDayWageFirstOccurence=mapDayWithWageArray.find(fullTimeWage);
 console.log("7D" +fullDayWageFirstOccurence);
+
+console.log("7E" +fullDayWageArr.every(fullTimeWage));
+
+
+
