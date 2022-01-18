@@ -90,6 +90,9 @@ let fullDayWageFirstOccurence=mapDayWithWageArray.find(fullTimeWage);
 console.log("7D" +fullDayWageFirstOccurence);
 
 console.log("7E" +fullDayWageArr.every(fullTimeWage));
-
+let partTimeWage=function(dailyWage){
+    return dailyWage.toString().includes("80");
+}
+console.log("7F" , mapDayWithWageArray.some(partTimeWage));
 
 
