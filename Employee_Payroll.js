@@ -80,5 +80,11 @@ function mapDayDailyWage(dailyWage)  {
 let mapDayWithWageArray=empDailyWageArray.map(mapDayWithWageArray);
 console.log("7B "+mapDayWithWageArray);
 
+let fullTimeWage=function(dailyWage){
+    return dailyWage.toString().includes("160");
+}
+let fullDayWageArr=mapDayWithWageArray.filter(fullTimeWage);
+console.log("7C" +fullDayWageArr);
 
-
+let fullDayWageFirstOccurence=mapDayWithWageArray.find(fullTimeWage);
+console.log("7D" +fullDayWageFirstOccurence);
